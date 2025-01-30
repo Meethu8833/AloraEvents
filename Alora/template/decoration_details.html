@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'adddecoration' %}"><button>Add Decoration</button></a>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+        {% for x in data %}
+        <tr>
+            <td>{{x.decoration_name}}</td>
+            <td>{{x.decoration_price}}</td>
+            <td><img src="{{x.decoration_image.url}}" alt="img"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

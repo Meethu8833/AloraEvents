@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>{{data.hall_name}}</h3><br>
+    <img src="{{data.photo_url.url}}" alt="img"><br><br>
+
+    Location: {{data.location}} <br><br>
+    Capacity: {{data.capacity}} <br><br>
+    Price(per day): {{data.price_per_day}} <br><br>
+    Description: {{data.hall_description}} <br><br>
+    <a href="{% url 'halldetails' %}">Back</a>
+
+</body>
+</html>

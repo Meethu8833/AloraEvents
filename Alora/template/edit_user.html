@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form method="POST" action="{% url 'edituser' %}">
+            {% csrf_token %}
+            <label for="name">First Name</label>
+            <input type="text" name="name" value="{{data.user_id.first_name}}" required><br><br>
+            <label for="email">Email</label>
+            <input type="text" name="email" value="{{data.user_id.email}}" required><br><br>
+            <label for="no">Phone Number</label>
+            <input type="text" name="no" value="{{data.phone_number}}"><br><br>
+            <label for="gender">Gender</label>
+            <input type="text" name="gender" value="{{data.gender}}" required><br><br>
+            <label for="address">Address</label>
+            <textarea name="address">{{data.address}}</textarea>
+            <button type="submit">Edit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book</title>
+    <style>
+        .container {
+  position: relative;
+}
+
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <form action="{% url 'book' %}" method="POST" >
+        {% csrf_token %}
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="data">Halls:</label>
+        {% for i in data %}
+        <label>
+            <div class="container">
+                <input type="checkbox" name="hall" value="{{i.id}}"><img src="{{i.photo_url.url}} " alt="" style="height: 200px;width: 200px;">
+                <div class="topleft">price:{{i.price_per_day}}
+                    <p>(people:{{i.capacity}})</p>
+                </div>
+              </div>
+        </label>
+        {% endfor %}<br><br>
+        
+        <label for="f">Food</label>
+        <input type="radio" name="f" value="yes">
+        <label for="">Yes</label>
+        <input type="radio" name="f" value="no">
+        <label for="">No</label>
+        {% for food in foods %}
+        <label >
+            <div class="container">
+                <input type="checkbox" name="food" value="{{food.id}}"><img src="{{food.food_image.url}}" alt="food" style="height: 200px;width: 200px;">
+                <div class="topleft">price:{{food.food_price}} per person
+                </div>
+              </div>
+        </label>
+        {% endfor %}<br><br>
+        <label>Number of people:</label>
+        <input type="number" name="people_num"><br><br>
+        <label for="">Photography(Rs. 10000)</label>
+        <input type="radio" name="photography" value="yes">
+        <label for="yes">Yes</label>
+        <input type="radio" name="photography" value="no">
+        <label for="no">No</label><br><br>
+        <label for="decoration">Decoration</label>
+        <input type="radio" name="decoration" value="yes">
+        <label for="yes">Yes</label>
+        <input type="radio" name="decoration" value="no">
+        <label for="no">No</label><br><br>
+        <label for="">If yes, select decoration</label>
+        {% for dec in decoration %}
+        <div class="container">
+            <input type="checkbox" name="decoration_model" value="{{dec.id}}"><img src="{{dec.decoration_image.url}}" alt=""style="height: 200px;width: 200px;">
+            <div class="topleft">price:{{dec.decoration_price}}
+            </div>
+          </div>
+        {% endfor %}<br><br>
+        <label for="customization">customization:</label>
+        <input type="text" name="customization" placeholder="color theme"><br><br>
+        <button type="submit">Book</button>
+    </form>
+
+    <script>
+        document.getElementById("date").min = new Date().toISOString().split("T")[0];
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>User Profile</h2>
+    Name: {{data.user_id.first_name}} <br>
+    Email: {{data.user_id.email}} <br>
+    Phone Number: {{data.phone_number}} <br>
+    Gender: {{data.gender}} <br>
+    Address: {{data.address}} <br><br>
+    <a href="{% url 'edituser' %}"><button>Edit</button></a>
+
+</body>
+</html>

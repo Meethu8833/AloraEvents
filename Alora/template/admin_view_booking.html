@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Event Date</th>
+            <th>User details</th>
+            <th>Hall</th>
+            <th>Booking Date</th>
+            <th>Photography</th>
+            <th>Photography Cost</th>
+            <th>Food</th>
+            <th>Food Details</th>
+            <th>Number of people</th>
+            <th>Decoration</th>
+            <th>Decoration Details</th>
+            <th>Total Amount</th>
+            <th>Payment Status</th>
+        </tr>
+        {% for x in data %}
+        <tr>
+            <td>{{x.event_date}}</td>
+            <td>{{x.user_id.first_name}}</td>
+            <td>{{x.hall_id.hall_name}}</td>
+            <td>{{x.booking_date}}</td>
+            <td>{{x.photography}}</td>
+            <td>{{x.photography_cost}}</td>
+            <td>{{x.food_value}}</td>
+            <td>{{x.food.food_name}} <br> {{x.food.food_price}}</td>
+            <td>{{x.no_of_people}}</td>
+            <td>{{x.decoration_value}}</td>
+            <td>{{x.decoration.decoration_name}} <br> {{x.decoration.decoration_price}}</td>
+            <td>{{x.total_payment}}</td>
+            <td>{{x.payment_status}}</td>
+            <td>
+                <form action="{% url 'acceptrejectbooking' id=x.id %}" method="post">
+                    {% csrf_token %}
+                    {% if x.event_status == 'Pending' %}
+               
+                    <input type="submit" value="Accept" name="Status">
+                    <input type="submit" value="Reject" name="Status">
+                    {% elif x.event_status == 'Accept' %}
+                    <input type="submit" value="Reject" name="Status">
+                    {% else %}
+                    <input type="submit" value="Accept" name="Status">
+              
+                    {% endif %}
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
