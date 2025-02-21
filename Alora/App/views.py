@@ -90,7 +90,7 @@ def user_registration(request):
         address=request.POST['address']
         uname=request.POST['uname']
         if User.objects.filter(username=uname).exists():
-            return render(request,'registration.html',{'error':'Username number already exists!'})
+            return render(request,'registration.html',{'error':'Username already exists!'})
         password=request.POST['password']
         cpassword=request.POST['cpass']
         if password!=cpassword:
@@ -347,11 +347,6 @@ def accept_reject_booking(request,id):
         data.save()
         return redirect(admin_view_booking)
     return redirect(admin_view_booking)
-
-
-
-
-
 
 
 

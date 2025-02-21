@@ -2,83 +2,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Irish Grover' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Inria Sans' rel='stylesheet'>
-    <title>Document</title>
-    <style>
-        body{
-          color: white;
-        }
-        .alora{
-            font-family: 'Irish Grover';
-            font-size: 25px;
-        }
-        .icon{
-            width: 20.9px;
-            height: 21.4px;
-            margin-left: 1%;
-        }
-        .nav-link{
-            color: white;
-        }
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Irish Grover' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Inria Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Inknut Antiqua' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Island Moments' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Darker Grotesque' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <style>
+    nav{
+      background-color: rgb(41, 41, 41);
+      color: white;
+      padding: 10px 0 10px 0;
+    }
+    nav a{
+      text-decoration: none;
+      color: white;
+    }
+    .alora{
+      font-family: 'Irish Grover';
+      font-size: 25px;
+    }
+    .rc1{
+      width: 10%;
+      text-align: center;
+    }
+    .rc2{
+      width: 75%;
+      text-align: center;
+      word-spacing: 25px;
+      text-decoration: none;
+      font-family: 'Inria Sans';
+      font-size: 18px;
+    }
+    .rc3{
+      word-spacing: 15px;
+    }
+    .rc3 .btn{
+      /* font-family: 'Inria Sans'; */
+      font-size: 27px;
+      background-color: aqua;
+    }
+    .rc4{
+      display: none;
+    }
+    .a .carousel-button-container{
+      font-family: 'Inknut Antiqua';
+    }
+    .roww{
+      display: flex;
+    }
+    .carousel-control-prev-icon,.carousel-control-next-icon{
+      filter: invert(100%);
+      width: 3rem;
+      height: 3rem;
+    }
+    .carousel-button-container {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensures it's above images */
+    border: 1px solid black;
+    background-color: white;
+    }
+    .r img{
+      height: 350px;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .r{
+      /* border: 2px solid blueviolet; */
+      margin: 4% 5%;
+      font-family: 'Inknut Antiqua';
+    }
+    .r .rc{
+      position: relative;
+      /* margin: 0.5%; */
+    }
+    .r .txt {
+    position: absolute;
+    top: 25px;  /* Moves text to the top */
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    }
+    .r2{
+      text-align: center;
+    }
+    .r2 .ep{
+      font-family: 'Irish Grover';
+      font-size: 36px;
+    }
+    .r2 .ep1{
+      font-family: 'Island Moments';
+      font-size: 40px;
+    }
+    .cia img{
+      height: 300px;
+      width: 200px;
+    }
+    .r3{
+      background-color: rgb(250, 215, 238);
+    }
+    .r3 .hr3{
+      font-family: 'Italiana';
+      font-size: 37px;
+    }
+    .r3 .h1r3{
+      font-family: 'Darker Grotesque';
+      font-size: 29px;
+    }
+    .im img{
+      padding: 5px;
+    }
+
+
+    @media (max-width: 768px) {
+      .rc1{
+        width: 90%;
+        text-align: left;
+      }
+      .rc1 span{
+        margin-left: 5%;
+      }
+      .rc2,.rc3{
+        display: none;
+      }
+      .rc4{
+        display: contents;
+        text-align: right;
+      }
+    }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-dark text-light">
-    <div class="container-fluid">
-      <a class="navbar-brand text-white alora" href="#">ALORA<img src="{% static 'alora_icon.png' %}" alt="icon" class="icon"></a>
-      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon "></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active text-primary" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Testimonials</a>
-          </li>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li> -->
-        </ul>
-        <div class="d-flex">
-          <ul class="navbar-nav md-mx-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
+  <div class="container-fluid p-0">
+    <nav class="roww">
+      <div class="rc1">
+        <span class="alora">ALORA</span>
+        <img src="{% static 'alora_icon.png' %}" alt="icon" height="25px" width="25px">
+      </div>
+      <div class="rc2">
+        <a href="">Home</a>
+        <a href="">Services</a>
+        <a href="">About</a>
+        <a href="">Gallery</a>
+        <a href="">Testimonials</a>
+      </div>
+      <div class="rc3">
+        <a href="">SignUp</a>
+        <a href="">Login</a>
+      </div>
+      <div class="rc4">
+        <div class="dropdown">
+          <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-list"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item active" href="#">Home</a></li>
+            <li><a class="dropdown-item" href="#">Services</a></li>
+            <li><a class="dropdown-item" href="#">About</a></li>
+            <li><a class="dropdown-item" href="#">Gallery</a></li>
+            <li><a class="dropdown-item" href="#">Testimonials</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">SignUp</a></li>
+            <li><a class="dropdown-item" href="#">Login</a></li>
           </ul>
-          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="carouselExampleAutoplaying a" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'alora_logo.png' %}" class="d-block w-100" alt="..." height="600vh">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'alora_logo.png' %}" class="d-block w-100" alt="..." height="600vh">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'alora_logo.png' %}" class="d-block w-100" alt="..." height="600vh">
+        </div>
+      </div>
+
+      <div class="carousel-button-container">
+        <a href="#"><button class="btn ">Know More</button></a>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="row g-0 justify-content-center r">
+      <div class="col-lg-3 col-md-6 col-sm-12 text-white p-3 rc"><img src="{% static 'venue.png' %}" alt=""><span class="txt">VENUE</span></div>
+      <div class="col-lg-3 col-md-6 col-sm-12 text-white p-3 rc"><img src="{% static 'decor.jpg' %}" alt=""><span class="txt">DECOR</span></div>
+      <div class="col-lg-3 col-md-6 col-sm-12 text-white p-3 rc"><img src="{% static 'catering.jpg' %}" alt=""><span class="txt">CATERING</span></div>
+      <div class="col-lg-3 col-md-6 col-sm-12 text-white p-3 rc"><img src="{% static 'photography.jpg' %}" alt=""><span class="txt">PHOTOGRAPHY</span></div>
+    </div>
+    <div class="row g-0 r2">
+      <span class="ep">EVENT PLANNER</span>
+      <span class="ep1">"We Plan Your Dream Weddings and Events"</span>
+      <div class="d-flex justify-content-center gap-5 mb-3 mt-4">
+        <button class="btn btn-outline-dark active">All</button>
+        <button class="btn btn-outline-dark">Weddings</button>
+        <button class="btn btn-outline-dark">Private Events</button>
+        <button class="btn btn-outline-dark">Corporate Events</button>
+      </div>
+      <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner text-center cia">
+            <div class="carousel-item row active">
+                <!-- <img src="https://source.unsplash.com/600x400/?wedding,ceremony" class="d-block mx-auto"> -->
+                <img src="{% static 'venue.png' %}" class="d-block mx-auto">
+            </div>
+            <div class="carousel-item">
+                <!-- <img src="https://source.unsplash.com/600x400/?event,banquet" class="d-block mx-auto"> -->
+                <img src="{% static 'decor.jpg' %}" class="d-block mx-auto">
+            </div>
+            <div class="carousel-item">
+                <!-- <img src="https://source.unsplash.com/600x400/?birthday,party" class="d-block mx-auto"> -->
+                <img src="{% static 'catering.jpg' %}" class="d-block mx-auto">
+            </div>
+            <div class="carousel-item">
+                <!-- <img src="https://source.unsplash.com/600x400/?corporate,event" class="d-block mx-auto"> -->
+                <img src="{% static 'photography.jpg' %}" class="d-block mx-auto">
+            </div>
+        </div>
+
+        <!-- Left and Right Navigation -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
-  </nav>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
+    <div class="row g-0 r3">
+      <div class="row ps-3 g-0">
+        <div class="col-lg-4 m-5 p-5">
+          <span class="hr3">We Plan and Deliver Event Services to meet your expectations</span><br><br>
+          <span class="h1r3">Alora Event Management is a premier 
+            company dedicated to crafting 
+            extraordinary experiences tailored to
+            your vision. With a passion for precision 
+            and creativity, Alora transforms ideas 
+            into unforgettable moments, offering 
+            end-to-end event planning, design, 
+            and execution. Whether it's a corporate 
+            gala, a dream wedding, or a milestone 
+            celebration, Alora ensures every 
+            detail is seamless, leaving you free to 
+            enjoy the magic of your special occasion.</span>
+        </div>
+        <div class="col-lg-7 mt-5 im">
+          <div class="row g-0 mt-5 p-6 ">
+            <div class="col">
+              <img src="{% static 'corporate.png' %}" alt="c" height="300px" width="100%">
+              <img src="{% static 'wed5.png' %}" alt="w" height="500px" width="100%">
+            </div>
+            <div class="col">
+              <img src="{% static 'wed3.png' %}" alt="w" height="500px" width="100%">
+              <img src="{% static 'download.png' %}" alt="c" height="300px" width="100%">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>

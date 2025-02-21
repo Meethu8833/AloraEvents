@@ -4,31 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(to top right, rgb(165, 155, 155), rgb(255, 255, 255));
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            padding: 5%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            border-radius: 10px;
+            background-color: white;
+            padding: 1% 5% 1% 5%;
+            text-align: center;
+            box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.1);
+        }
+        h3{
+            font-size: xx-large;
+        }
+        .i{
+            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
+            width: 100%;
+        }
+        button{
+            width: 50%;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div class="container">
         <form method="POST" action="{% url 'reg' %}">
             {% csrf_token %}
             <h3>User Registration</h3>
-            <input type="text" name="name" placeholder="Name" required><br><br>
-            <input type="email" name="email" placeholder="Email" required><br><br>
-            <input type="tel" name="no" placeholder="Phone Number" required><br><br>
+            <input type="text" name="name" placeholder="Name" required class="i"><br><br>
+            <input type="email" name="email" placeholder="Email" required class="i"><br><br>
+            <input type="tel" name="no" placeholder="Phone Number" required class="i"><br><br>
             Gender: <input type="radio" name="gender" value="Male">
             <label for="" >Male</label>&nbsp;&nbsp;&nbsp;
             <input type="radio" name="gender" value="Female">
             <label for="">Female</label>
             <input type="radio" name="gender" value="Other">
             <label for="">Other</label><br><br>
-            <textarea name="address" placeholder="Address"></textarea><br><br>
-            <input type="text" name="uname" placeholder="Username" required><br><br>
-            <input type="password" name="password" placeholder="Password" required><br><br>
-            <input type="password" name="cpass" placeholder="Confirm Password" required><br><br>
+            <textarea name="address" placeholder="Address" class="i"></textarea><br><br>
+            <input type="text" name="uname" placeholder="Username" required class="i"><br><br>
+            <input type="password" name="password" placeholder="Password" required class="i"><br><br>
+            <input type="password" name="cpass" placeholder="Confirm Password" required class="i"><br><br>
             <button type="submit">Register</button><br><br>
             <span>Already Registered? <a href="{% url 'log' %}">Login</a></span>
         </form>
     </div>
-    {% if error %}
-    {{error}}
-    {% endif %}
+   
 </body>
 </html>
+
+
